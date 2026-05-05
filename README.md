@@ -1,4 +1,4 @@
-## Venture Frontend Technical Assessment
+## Next.js Admin Dashboard
 
 This project implements the requested assessment using:
 

@@ -30,7 +30,7 @@ export function DashboardShell({ children }: PropsWithChildren) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Venture Dashboard
+            Admin Dashboard
           </Typography>
           <Stack direction="row" spacing={1}>
             <Button color="inherit" component={Link} href="/dashboard">

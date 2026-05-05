@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Venture Frontend Assessment",
+  title: "Next.js Admin Dashboard",
   description: "Next.js, Zustand, MUI, and NextAuth technical assessment.",
 };
 
