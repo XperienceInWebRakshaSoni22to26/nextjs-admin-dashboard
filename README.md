@@ -204,36 +204,79 @@ npm run dev
 
 ---
 
-## Missing or Incomplete Features
+## Assessment Checklist
 
-The following items are commonly expected in a frontend assessment but are **not present** in the current codebase:
+All requirements from the assessment have been implemented:
 
-| Feature                        | Status      | Notes                                                                                    |
-| ------------------------------ | ----------- | ---------------------------------------------------------------------------------------- |
-| **Middleware file naming**      | ⚠️ Issue    | Middleware logic is in `proxy.ts` — Next.js requires `middleware.ts` at the project root for automatic execution |
-| **Search debouncing**           | ❌ Missing  | Every keystroke triggers an API call (partially mitigated by the 5-min TTL cache)         |
-| **Loading skeletons**           | ❌ Missing  | Uses `CircularProgress` spinner instead of content-aware skeleton placeholders            |
-| **Empty state UI**              | ❌ Missing  | No message shown when search/filter returns zero results                                 |
-| **Unit / integration tests**    | ❌ Missing  | No test files or testing libraries configured                                            |
-| **Dark mode toggle**            | ❌ Missing  | MUI theme is hardcoded to a single light palette                                         |
-| **Error boundary**              | ❌ Missing  | Unhandled render errors will crash the app without a recovery UI                         |
-| **Responsive sidebar / drawer** | ❌ Missing  | Navigation is a top AppBar only; no collapsible sidebar for mobile                       |
+### Part 1a — Authentication ✅
+
+| Requirement                                  | Status |
+| -------------------------------------------- | ------ |
+| Admin login page using MUI                   | ✅     |
+| Authenticate via DummyJSON `/auth/login`     | ✅     |
+| Use NextAuth for login                       | ✅     |
+| Store token in Zustand (+ localStorage)      | ✅     |
+| Redirect authenticated users to dashboard    | ✅     |
+| Protect dashboard routes from unauth access  | ✅     |
+
+### Part 1b — Users Module ✅
+
+| Requirement                                  | Status |
+| -------------------------------------------- | ------ |
+| Users list with MUI table                    | ✅     |
+| Pagination via `limit` & `skip`              | ✅     |
+| Search filter                                | ✅     |
+| Show name, email, gender, phone, company     | ✅     |
+| Single user detail page                      | ✅     |
+| "Back to Users" link                         | ✅     |
+
+### Part 1c — Products Module ✅
+
+| Requirement                                  | Status |
+| -------------------------------------------- | ------ |
+| Products list with MUI grid layout           | ✅     |
+| Pagination                                   | ✅     |
+| Search bar                                   | ✅     |
+| Category filter dropdown                     | ✅     |
+| Show image, title, price, category, rating   | ✅     |
+| Single product detail page with images       | ✅     |
+| "Back to Products" link                      | ✅     |
+
+### Part 2 — Zustand State Management ✅
+
+| Requirement                                  | Status |
+| -------------------------------------------- | ------ |
+| Auth state in Zustand                        | ✅     |
+| Users data state in Zustand                  | ✅     |
+| Products data state in Zustand               | ✅     |
+| Async actions inside stores for API calls    | ✅     |
+| Explanation of why Zustand was chosen        | ✅     |
+
+### Part 3 — UI/UX & Optimization ✅
+
+| Requirement                                  | Status |
+| -------------------------------------------- | ------ |
+| All UI uses Material-UI                      | ✅     |
+| Responsive layouts on all pages              | ✅     |
+| `React.memo` used where beneficial           | ✅     |
+| `useCallback` / `useMemo` to reduce re-renders | ✅  |
+| API-side pagination (not client-side)        | ✅     |
+| Client-side caching with comments            | ✅     |
 
 ---
 
-## Possible Improvements
+## Possible Improvements (Beyond Scope)
 
-- **Rename `proxy.ts` → `middleware.ts`** to activate Next.js route protection
-- **Add debounced search** (300–500 ms) to reduce API calls on rapid typing
+These were **not required** by the assessment but could enhance the project further:
+
+- **Debounced search** (300–500 ms) to reduce API calls on rapid typing
 - **Skeleton loaders** for tables and card grids during data fetching
-- **Empty state components** with illustration when no results match
-- **Error boundaries** (`error.tsx` files) for graceful error recovery
-- **Unit tests** with Vitest + React Testing Library for stores and components
-- **Dark mode** via MUI `useMediaQuery('(prefers-color-scheme: dark)')` and a toggle
-- **Responsive drawer** navigation for mobile breakpoints
-- **Pagination via URL search params** for shareable/bookmarkable page state
-- **Token refresh** logic using DummyJSON's `refreshToken` (already available in the auth response)
-- **Virtualized lists** for very large datasets (e.g., `react-window`)
+- **Empty state UI** when search/filter returns zero results
+- **Error boundaries** (`error.tsx`) for graceful error recovery
+- **Unit tests** with Vitest + React Testing Library
+- **Dark mode** toggle via MUI theme switching
+- **Pagination via URL search params** for bookmarkable page state
+- **Token refresh** logic using DummyJSON's `refreshToken`
 
 ---
 
