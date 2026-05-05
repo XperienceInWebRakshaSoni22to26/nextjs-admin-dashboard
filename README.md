@@ -76,6 +76,6 @@ DummyJSON sample credentials:
 - Username: `emilys`
 - Password: `emilyspass`
 
-## Pending Items
+## Repository
 
-- Repository link is pending because this depends on creating a public GitHub repository and pushing this local project.
+- GitHub: [XperienceInWebRakshaSoni22to26/nextjs-admin-dashboard](https://github.com/XperienceInWebRakshaSoni22to26/nextjs-admin-dashboard)
